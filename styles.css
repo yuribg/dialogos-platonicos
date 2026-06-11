@@ -379,8 +379,19 @@ a:focus-visible {
   }
 
   .catalog-intro {
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
+    text-align: center;
+  }
+
+  .catalog-intro h2,
+  .catalog-intro p {
+    width: 100%;
+  }
+
+  .book-card {
+    align-items: center;
+    text-align: center;
   }
 }
 
