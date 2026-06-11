@@ -34,7 +34,7 @@
   --shadow-md: 0 8px 24px rgba(16, 24, 40, 0.08);
   --shadow-lg: 0 16px 40px rgba(16, 24, 40, 0.12);
 
-  --radius-sm: 10px;
+  --radius-sm: 6px;
   --radius-md: 16px;
   --radius-lg: 24px;
 
@@ -226,7 +226,7 @@ main.container {
   padding: 22px;
   background: linear-gradient(180deg, #ffffff 0%, #fbfcfe 100%);
   border: 1px solid var(--border);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm);
   box-shadow: var(--shadow-sm);
   transition:
     transform 0.18s ease,
@@ -259,16 +259,49 @@ main.container {
 
 .card-actions {
   margin-top: auto;
+  display: flex;
+  gap: 10px;
 }
 
 /* BOTÃO */
+.btn-view {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--action);
+  text-decoration: none;
+  font-size: 0.94rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  border: 1.5px solid var(--action);
+  box-shadow: none;
+  transition:
+    background-color 0.18s ease,
+    color 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.btn-view:hover {
+  background: var(--action-soft);
+  color: var(--action-hover);
+  border-color: var(--action-hover);
+  transform: translateY(-1px);
+}
+
+.btn-view:active {
+  transform: translateY(0);
+}
+
 .btn-download {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 40px;
-  padding: 10px 16px;
-  border-radius: 999px;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
   background: var(--action);
   color: #ffffff;
   text-decoration: none;
@@ -307,6 +340,34 @@ main.container {
   font-size: 0.9rem;
   font-weight: 700;
   border: 1px solid #f5d6a0;
+}
+
+/* DOWNLOAD ALL SECTION */
+.download-all-section {
+  padding: 56px 0 44px;
+}
+
+.download-all-content {
+  text-align: center;
+}
+
+.download-all-content h2 {
+  margin: 0 0 8px;
+  font-size: 1.8rem;
+  letter-spacing: -0.02em;
+  color: #111827;
+}
+
+.download-all-content p {
+  margin: 0 0 20px;
+  font-size: 1rem;
+  color: var(--text-soft);
+}
+
+.btn-download-all {
+  min-height: 44px;
+  padding: 11px 24px;
+  font-size: 0.98rem;
 }
 
 /* FOOTER */
@@ -407,5 +468,21 @@ a:focus-visible {
 
   .book-card {
     min-height: auto;
+  }
+
+  .download-all-section {
+    padding: 40px 0 32px;
+  }
+
+  .download-all-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .download-all-content p {
+    font-size: 0.95rem;
+  }
+
+  .btn-download-all {
+    width: 100%;
   }
 }
