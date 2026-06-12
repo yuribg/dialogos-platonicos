@@ -103,7 +103,7 @@ a {
   padding: 32px;
   background: var(--bg-elevated);
   border: 1px solid rgba(214, 221, 230, 0.9);
-  border-radius: 28px;
+  border-radius: 12px;
   backdrop-filter: blur(16px);
   box-shadow: var(--shadow-md);
 }
@@ -226,7 +226,7 @@ main.container {
   padding: 22px;
   background: linear-gradient(180deg, #ffffff 0%, #fbfcfe 100%);
   border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
+  border-radius: 12px;
   box-shadow: var(--shadow-sm);
   transition:
     transform 0.18s ease,
@@ -260,7 +260,13 @@ main.container {
 .card-actions {
   margin-top: auto;
   display: flex;
-  gap: 10px;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.card-actions a {
+  flex: 1;
+  min-width: 80px;
 }
 
 /* BOTÃO */
@@ -454,11 +460,16 @@ a:focus-visible {
     align-items: center;
     text-align: center;
   }
+
+  .section-title,
+  .section-description {
+    text-align: center;
+  }
 }
 
 @media (max-width: 640px) {
   .container {
-    width: min(var(--container), calc(100% - 20px));
+    width: min(var(--container), calc(100% - 30px));
   }
 
   .books-grid,
@@ -472,6 +483,12 @@ a:focus-visible {
 
   .download-all-section {
     padding: 40px 0 32px;
+  }
+
+  .download-all-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
 
   .download-all-content h2 {
